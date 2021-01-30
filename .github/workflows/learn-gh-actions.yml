@@ -2,9 +2,18 @@ name: learn-gh-actions
 on: [push]
 jobs:
     my-job:
+    
         runs-on: ubuntu-latest
-	steps:
-	    - uses: actions/checkout@v2
-	    - run: echo "Good morning"
-	    - run: ls -l
-	    - run: echo "Good night"
+
+        steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+  
+        - name: Welcome
+          run: echo "Good morning"
+
+        - name: Do some work
+          run: ls -l
+
+        - name: Cleanup
+          run: echo "Good night"
